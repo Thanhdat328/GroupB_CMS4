@@ -5194,9 +5194,9 @@ function wp_required_field_indicator() {
  */
 function wp_required_field_message() {
 	$message = sprintf(
-		'<span class="required-field-message">%s</span>',
+		
 		/* translators: %s: Asterisk symbol (*). */
-		sprintf( __( 'Required fields are marked %s' ), wp_required_field_indicator() )
+		sprintf( __( ' %s' ), wp_required_field_indicator() )
 	);
 
 	/**

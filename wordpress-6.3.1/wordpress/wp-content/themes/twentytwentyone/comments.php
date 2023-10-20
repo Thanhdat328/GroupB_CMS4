@@ -73,7 +73,30 @@ $twenty_twenty_one_comment_count = get_comments_number();
 			)
 		);
 		?>
+  <section class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Make
+                                    a Post</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                                <div class="form-group">
+                                    <label class="sr-only" for="message">post</label>
+                                    <textarea class="form-control" id="message" rows="3" placeholder="What are you thinking..."></textarea>
+                                </div>
 
+                            </div>
+                        </div>
+                        <div class="text-right">
+                        	<button type="submit" class="btn btn-primary">share</button>
+                        </div>
+                    </div>
+                </section>
 		<?php if ( ! comments_open() ) : ?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'twentytwentyone' ); ?></p>
 		<?php endif; ?>
@@ -82,7 +105,7 @@ $twenty_twenty_one_comment_count = get_comments_number();
 	<?php
 	comment_form(
 		array(
-			'title_reply'        => esc_html__( 'Leave a comment', 'twentytwentyone' ),
+			'title_reply'        => esc_html__( '', 'twentytwentyone' ),
 			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 			'title_reply_after'  => '</h2>',
 		)

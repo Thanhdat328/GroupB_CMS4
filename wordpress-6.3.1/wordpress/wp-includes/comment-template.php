@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Comment template functions
@@ -2564,7 +2565,7 @@ function comment_form( $args = array(), $post = null ) {
 			$args['fields']['cookies'] = $fields['cookies'];
 		}
 	}
-
+	
 	/**
 	 * Filters the default comment form fields.
 	 *
@@ -2577,13 +2578,13 @@ function comment_form( $args = array(), $post = null ) {
 	$defaults = array(
 		'fields'               => $fields,
 		'comment_field'        => sprintf(
-			'<p class="comment-form-comment">%s %s</p>',
+			'<p class="comment-form-comment "></p>',
 			sprintf(
-				'<label for="comment">%s%s</label>',
-				_x( 'Comment', 'noun' ),
+				'<label for="comment"></label>',
+				_x( '', 'noun' ),
 				$required_indicator
 			),
-			'<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"' . $required_attribute . '></textarea>'
+		 $required_attribute
 		),
 		'must_log_in'          => sprintf(
 			'<p class="must-log-in">%s</p>',
@@ -2595,10 +2596,10 @@ function comment_form( $args = array(), $post = null ) {
 			)
 		),
 		'logged_in_as'         => sprintf(
-			'<p class="logged-in-as">%s%s</p>',
+			'<p class="logged-in-as"></p>',
 			sprintf(
 				/* translators: 1: User name, 2: Edit user link, 3: Logout URL. */
-				__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>' ),
+				__( ' %1$s. <a href="%2$s"></a>. <a href="%3$s">Log out?</a>' ),
 				$user_identity,
 				get_edit_user_link(),
 				/** This filter is documented in wp-includes/link-template.php */
@@ -2632,7 +2633,7 @@ function comment_form( $args = array(), $post = null ) {
 		'cancel_reply_link'    => __( 'Cancel reply' ),
 		'label_submit'         => __( 'Post Comment' ),
 		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
+		'submit_field'         => '<p class="form-submit"></p>',
 		'format'               => 'xhtml',
 	);
 
@@ -2869,6 +2870,7 @@ function comment_form( $args = array(), $post = null ) {
 
 		endif;
 		?>
+		
 	</div><!-- #respond -->
 	<?php
 
