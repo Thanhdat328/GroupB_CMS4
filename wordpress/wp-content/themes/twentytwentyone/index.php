@@ -14,13 +14,35 @@
  * @since Twenty Twenty-One 1.0
  */
 
-get_header(); ?>
+get_header(); 
+	?>
+
+	<div class="row title">
+		<div class="col-md-3 list-a">
+			<div class="panel-heading"><h4>Xem nhiều </h4></div>
+			<div class="panel-body">
+			<?php
+    	// Tham số của wp_get_archives()
+    	$args = array(
+        'type' => 'monthly', // Loại lưu trữ (tháng, năm, v.v.)
+        'limit' => 12, // Số lượng mục lưu trữ hiển thị
+        'format' => 'html', // Định dạng hiển thị (html, link)
+        'echo' => 1, // Hiển thị ngay
+    	);
+
+    	// Gọi archives
+    	wp_get_archives($args);
+    	?>
+			</div>
+		</div>
+	</div>
 
 <?php if ( is_home() && ! is_front_page() && ! empty( single_post_title( '', false ) ) ) : ?>
 	<header class="page-header alignwide">
 		<h1 class="page-title"><?php single_post_title(); ?></h1>
 	</header><!-- .page-header -->
 <?php endif; ?>
+
 
 <?php
 if ( have_posts() ) {
