@@ -97,6 +97,10 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 /* Categories 01 to 03 are the basics. */
 
 /* Variables */
+
+
+
+
 :root {
 
 	/* Font Family */
@@ -2642,17 +2646,17 @@ ul {
 	list-style-type: disc;
 }
 
-ul ul {
+/* ul ul {
 	list-style-type: circle;
-}
+} */
 
 ol {
 	list-style-type: decimal;
 }
 
-ol ul {
+/* ol ul {
 	list-style-type: circle;
-}
+} */
 
 dt {
 	font-family: var(--definition-term--font-family);
@@ -5887,4 +5891,105 @@ footer {
 
 .is-IE .post-thumbnail .wp-post-image {
 	min-width: auto;
+}
+
+/*Category*/
+.list-group-item{
+	border: none;
+	border-bottom: 1px #686565 solid;
+	padding-left: 0;
+	padding-right: 0;
+	margin: 0 15px;
+}
+.list-group-item:before{
+	font-family: Arial, Helvetica, sans-serif;
+	color:  #d0bc37;
+	font-size: 2em;
+	padding-right: 0.5em;
+	position: relative;
+	top: 0.15em;
+}
+a{
+	color: #092f43;
+	text-decoration: none;
+}
+.crossedbg {
+    background: url(../../../wp-admin/images/itembg-grey.png);
+    height: 10px;
+    /* margin-block: auto; */
+    margin-right: 35px;
+    margin-left: 30px;
+}
+
+.panel-body{
+	background: #f9f3f3;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.panel-heading{
+	border: none !important;
+	background:none !important;
+}
+
+.panel-heading h2{
+	font-weight: 800;
+	font-size: 2.0em;
+	margin-left: 35px;
+}
+.list-group-item:last-child{
+	border-bottom: 0px;
+}
+.list-group-item a{
+	color: #092f43;
+}
+.list-group{
+	color: #d0bc37;
+}
+/* .col-md-3.list-a{
+	background: url(../../../wp-admin/images/OIP.jpeg);
+} */
+/* Kiểu danh sách danh mục */
+ul.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.category-list li {
+    margin-bottom: 10px;
+}
+
+ul.category-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hiệu ứng khi rê chuột vào danh mục */
+ul.category-list li a:hover {
+    color: #ff0000;
+}
+
+/* Chỉnh kiểu danh sách dạng ngang */
+ul.category-list-horizontal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+ul.category-list-horizontal li {
+    margin-right: 10px;
+}
+
+ul.category-list-horizontal li:last-child {
+    margin-right: 0;
+}
+ul{
+	list-style-type: disc;
+	color: #ffde00;
+}
+.list-p{
+	border-bottom: 1px solid #d0d0d0;
+	margin-right: 17px;
 }
