@@ -42,6 +42,7 @@ if ( have_posts() ) {
 		?>
 	</div><!-- .search-result-count -->
 	<?php
+	
 	// Start the Loop.
 	while ( have_posts() ) {
 		the_post();
@@ -52,6 +53,24 @@ if ( have_posts() ) {
 		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 		 */
 		get_template_part( 'template-parts/content/content-excerpt', get_post_format() );
+		if (is_search()) : ?>
+			<?php $post = get_post(get_the_ID());
+			$day = date('d', strtotime($post -> post_date));
+			$month = date('m', strtotime($post -> post_date));
+			$year = date('yyyy', strtotime($post -> post_date));
+			$title = $post -> post_title;
+			$content = $post -> post_content; ?>
+			<div class="list_search_detail">
+				<?php echo get_the_post_thumbnail(); ?>
+				<div class="middle_search_detail">
+					<div class="date"><?php echo $day;?></div>
+					<div class="month"><?php echo "Thang" . $month;?></div>
+				</div>
+				<div class="right_search_detail">
+					<div class="title_search_detail"><?php echo $title;?></div>
+					<div class="$content_search_detail"><?php echo $content;?></div>
+				</div>
+			</div><?php
 	} // End the loop.
 
 	// Previous/next page navigation.

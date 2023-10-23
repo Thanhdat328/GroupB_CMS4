@@ -79,6 +79,7 @@ section .section-title {
 }
 }
 </style>
+<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 <!-- Footer -->
 	<section id="footer">
 		<div class="container">
