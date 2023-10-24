@@ -5914,11 +5914,11 @@ a{
 	text-decoration: none;
 }
 .crossedbg {
-    background: url(../../../wp-admin/images/itembg-grey.png);
-    height: 10px;
+    background: url(../../../wp-admin/images/anhgach.png);
+    height: 15px;
     /* margin-block: auto; */
     margin-right: 35px;
-    margin-left: 30px;
+    margin-left: 35px;
 }
 
 .panel-body{
@@ -5944,11 +5944,15 @@ a{
 	color: #092f43;
 }
 .list-group{
-	color: #d0bc37;
+	background: #fff;
 }
-/* .col-md-3.list-a{
-	background: url(../../../wp-admin/images/OIP.jpeg);
-} */
+.col-md-3.list-a{
+	background: url(../../../wp-admin/images/anhsoc.png);
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-left: 55px;
+}
 /* Kiểu danh sách danh mục */
 ul.category-list {
     list-style: none;
@@ -5990,7 +5994,9 @@ ul{
 	color: #ffde00;
 }
 .list-p{
-	border-bottom: 1px solid #d0d0d0;
-	margin-right: 17px;
+	margin-top: 50px;
+    border-bottom: 1px solid #d0d0d0;
+    margin-right: 20px;
+    padding-bottom: 15px;
 }
 /*Category*/

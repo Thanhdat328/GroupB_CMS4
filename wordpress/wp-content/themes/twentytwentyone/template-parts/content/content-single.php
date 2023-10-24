@@ -38,6 +38,7 @@
 				
 						foreach ($categories as $category) {
 							echo '<li class="list-p"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
+				
 						}
 				
 						echo '</ul>';
