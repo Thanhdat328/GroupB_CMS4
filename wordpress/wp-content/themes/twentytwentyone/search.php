@@ -57,7 +57,9 @@ if ( have_posts() ) {
 	<div class="col-md-6"><?php ?><?php if (have_posts()) : ?>
 
 <?php while (have_posts()) : the_post(); ?>
-   <div class="container">
+   <div class="container" style="
+    border: 1px solid #efecec;
+    margin: 10px;">
   <div class="row">
 	<div class="col-md-3"><?php echo get_the_post_thumbnail();?></div>
    <div class="col-3 text-center"  id="border"><span style="font-family: 'Prata', serif;font-size: 3.1em;line-height: 1em;"><?php echo get_the_date('d'); // lấy ngày post bài ?></span> <br>Tháng <?php echo get_the_date('m'); // lấy ngày post bài ?></div>
