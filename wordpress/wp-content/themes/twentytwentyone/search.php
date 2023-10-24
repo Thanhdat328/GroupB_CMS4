@@ -68,7 +68,6 @@ if ( have_posts() ) {
     max-width: 50%;
 "><h4 style="
     margin-top: 35px;"><a class="tieuDe" href=<?php the_permalink(); ?>><?php the_title();?></a></h4>
-
 <p id="noiDung"><?php the_excerpt(); ?><a href=<?php the_permalink(); ?>>[...]</a></p>
 </div>
     </div>
