@@ -105,8 +105,8 @@
                 <ul style="margin-bottom: 0px;">
                     <?php
                     $args = array(
-                    'post_type' => 'post', // Loại bài viết bạn muốn lấy tiêu đề
-                    'posts_per_page' => -1, // Số lượng bài viết mỗi trang (-1: lấy tất cả)
+                    'post_type' => 'post', 
+                    'posts_per_page' => -1, 
                     );
 
                     $posts = get_posts($args);
