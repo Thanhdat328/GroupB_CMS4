@@ -10,6 +10,9 @@
  */
 
 ?>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <style>
     .headlines {
         background: #56bdbf;
@@ -67,6 +70,47 @@
         font-weight: bold;
         pad
     }
+    	/* CSS Test begin */
+.comment-box {
+    margin-top: 30px !important;
+}
+/* CSS Test end */
+
+.comment-box img {
+    width: 50px;
+    height: 50px;
+}
+.comment-box .media-left {
+    padding-right: 10px;
+    width: 65px;
+}
+.comment-box .media-body p {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.comment-box .media-body .media p {
+    margin-bottom: 0;
+}
+.comment-box .media-heading {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 7px 10px;
+    position: relative;
+    margin-bottom: -1px;
+}
+.comment-box .media-heading:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: -6px;
+}
 </style>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -119,21 +163,25 @@
                             <div class="headlinesdm">
                                 <div class="headlinesday">
                                     <?php
-                                    $current_date = date_i18n( 'd' ); // Lấy ngày hiện tại theo định dạng "dd/mm/yyyy"
-                                    echo $current_date; // Hiển thị ngày hiện tại
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('d', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+    
+                                    echo $post_date;
                                     ?>
                                 </div>
                                 <div class="headlinesmonth">
                                     <?php
-                                    $current_date = date_i18n( 'm' ); // Lấy ngày hiện tại theo định dạng "dd/mm/yyyy"
-                                    echo $current_date; // Hiển thị tháng hiện tại
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('m', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+                                    echo $post_date;
                                     ?>
                                 </div>
                             </div>
                             <div class="headlinesyear">
                                 <?php
-                                $current_date = date_i18n( 'Y' ); // Lấy ngày hiện tại theo định dạng "dd/mm/yyyy"
-                                echo $current_date; // Hiển thị năm hiện tại
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('Y', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+                                    echo $post_date;
                                 ?>
                             </div>
                         </div>
