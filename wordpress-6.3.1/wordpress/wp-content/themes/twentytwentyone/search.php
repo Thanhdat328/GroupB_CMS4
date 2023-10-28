@@ -24,6 +24,31 @@ if ( have_posts() ) {
 			?>
 		</h1>
 	</header><!-- .page-header -->
+		<div class="col-md-3 ">
+			<?php if (have_posts()) : ?>
+			<?php while (have_posts()) : the_post(); ?>
+				<div class="row">
+                    <div class="vc_column-inner "><div class="wpb_wrapper">
+                            <div class="wpb_text_column wpb_content_element  bottom-h4">
+                                <div class="wpb_wrapper">
+                                    <h4><?php the_title(); ?></h4>
+                                    <hr>
+                                    <p><img class="img-responsive"><?php the_post_thumbnail(); ?></p>
+                                    <p><?php
+										$excerpt = get_the_excerpt(); // Lấy phần tóm tắt của bài viết
+										$trimmed_excerpt = wp_trim_words( $excerpt, 20, '...' ); // Giới hạn 20 từ và thêm dấu "..." vào cuối
+
+										echo $trimmed_excerpt; // Hiển thị phần tóm tắt đã được giới hạn
+									?></p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+			<?php endwhile;?>
+			<?php endif; ?>
+		</div>
 
 	<div class="search-result-count default-max-width">
 		<?php
@@ -40,7 +65,8 @@ if ( have_posts() ) {
 			(int) $wp_query->found_posts
 		);
 		?>
-	</div><!-- .search-result-count -->
+	</div>
+	<!-- .search-result-count -->
 	<?php
 	// Start the Loop.
 	while ( have_posts() ) {
