@@ -79,10 +79,7 @@ $twentytwentyone_aria_label = ! empty( $args['aria_label'] ) ? 'aria-label="' . 
 	<input id="search" placeholder="Search" type="search" id="<?php echo esc_attr( $twentytwentyone_unique_id ); ?>" class="search-field" value="<?php echo get_search_query(); ?>" name="s" />
   <button type="submit" class="rounded" id="submit">Submit</button>
   </form>
-          <!-- <form class="d-flex" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-            <input id="search" class="rounded form-control me-2 border border-secondary-subtle" type="search" placeholder="Search" aria-label="Search">
-            
-          </form>     -->
+         
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end w-100 align-items-center">             
                 <li class="nav-item" style="margin-right: 20px;">
