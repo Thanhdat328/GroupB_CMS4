@@ -68,15 +68,13 @@ if ( have_posts() ) {
         <title>Document</title>
     </head>
     <style>
-    
-
         .Search2{
             color: red;
             margin-bottom: 1px;
         }
 
         h4{
-            
+            text-align: center;
             margin-bottom: 1px;
             
         }

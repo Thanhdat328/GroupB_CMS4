@@ -10,7 +10,117 @@
  */
 
 ?>
+<style>
+    .headlines {
+        background: #56bdbf;
+    }
 
+    .headlinestitle a {
+        text-decoration: none;
+        margin-top: 20px;
+        color: white;
+    }
+
+    /* ul {
+        padding-left: 0px;
+        margin-bottom: 0px;
+    } */
+
+    /* li {
+        list-style: none;
+        display: flex;
+    } */
+
+    .headlinesday {
+        border-bottom: white solid 1px;
+
+    }
+
+    .headlinesdate {
+        display: flex;
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        padding-left: 5px;
+    }
+
+    .headlinesyear {
+        padding-top: 8px;
+        padding-right: 25px;
+    }
+
+    .headlinestitle {
+        display: inline;
+        margin-top: 7px;
+    }
+
+    .headlinesdm {
+        padding-right: 5px;
+    }
+
+    .newsall {
+        text-align: center;
+        background: #62c6c8;
+    }
+
+    .newsall a {
+        color: white;
+        font-weight: bold;
+        pad
+    }
+
+    /* CSS Test begin */
+    .comment-box {
+        margin-top: 10px !important;
+    }
+
+    /* CSS Test end */
+
+    .comment-box img {
+        width: 50px;
+        height: 50px;
+        
+    }
+
+    .comment-box .media-left {
+        
+    }
+
+    .comment-box .media-body p {
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+    .media-body{
+        margin-top: -50px;
+        margin-left: 75px;
+    }
+
+    .comment-box .media-body .media p {
+        margin-bottom: 0;
+    }
+
+    .comment-box .media-heading {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 7px 10px;
+        position: relative;
+        margin-bottom: -1px;
+    }
+
+    .media-heading:before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-width: 1px 0 0 1px;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 10px;
+        left: -6px;
+    }
+
+</style>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header alignwide">
@@ -18,7 +128,7 @@
 		<?php twenty_twenty_one_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
 
-	<div class="row title">
+	<div class="row">
 		<div class="col-md-3 list-a">
 			<div class="panel-heading"><h2>Categories</h2></div>
 			<div class="crossedbg"></div>
@@ -49,6 +159,74 @@
 				</ul>
 			</div>
 		</div>
+        <div class="col-md-6"></div>
+        <!-- Revent Post (10) -->
+        <div class="col-md-3 bg-color">
+            <div class="headlines">
+
+                <ul style="margin-bottom: 0px;  padding-left: 0px;
+        margin-bottom: 0px;">
+                    <?php
+                    $args = array(
+                    'post_type' => 'post', 
+                    'posts_per_page' => -1, 
+                    );
+
+                    $posts = get_posts($args);
+
+                    foreach ($posts as $post) {
+                        setup_postdata($post);
+                    ?>
+                    <li style=" display: flex;">
+                        <div class="headlinesdate">
+                            <div class="headlinesdm">
+                                <div class="headlinesday">
+                                    <?php
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('d', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+    
+                                    echo $post_date;
+                                    ?>
+                                </div>
+                                <div class="headlinesmonth">
+                                    <?php
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('m', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+                                    echo $post_date;
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="headlinesyear">
+                                <?php
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('Y', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+                                    echo $post_date;
+                                ?>
+                            </div>
+                        </div>
+                        <div class="headlinestitle">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </div>
+                    </li>
+                    <?php
+                }
+
+                    wp_reset_postdata();
+                    ?>
+                </ul>
+
+            </div>
+            <div class="newsall">
+                <a href="<?php
+                $search_keyword = 'wordpress';
+                $search_url = get_search_link( urlencode( $search_keyword ) ); // Lấy đường dẫn trang kết quả tìm kiếm với từ khóa đã mã hóa
+                echo $search_url; // Hiển thị đường dẫn trang kết quả tìm kiếm
+                ?>">Xem tất cả tin tức</a>
+            </div>
+        </div>
+
 	</div>
 					
 	<div class="entry-content ">

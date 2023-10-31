@@ -2646,9 +2646,9 @@ ul {
 	list-style-type: disc;
 }
 
-ul ul {
+/* ul ul {
 	list-style-type: circle;
-}
+} */
 
 ol {
 	list-style-type: decimal;
@@ -5951,7 +5951,6 @@ a{
     padding-bottom: 25px;
     padding-left: 10px;
     padding-top: 10px;
-    margin-left: 55px;
 }
 /* Kiểu danh sách danh mục */
 ul.category-list {
