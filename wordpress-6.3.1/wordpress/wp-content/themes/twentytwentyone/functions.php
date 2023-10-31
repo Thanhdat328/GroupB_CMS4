@@ -363,7 +363,18 @@ function twenty_twenty_one_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Module #11', 'twentytwentyone' ),
-			'id'            => 'sidebar-11',
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'twentytwentyone' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Module #12', 'twentytwentyone' ),
+			'id'            => 'sidebar-3',
 			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'twentytwentyone' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',

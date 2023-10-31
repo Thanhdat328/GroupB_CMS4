@@ -5916,7 +5916,7 @@ a{
 .crossedbg {
     background: url(../../../wp-admin/images/anhgach.png);
     height: 15px;
-    /* margin-block: auto; */
+    margin-block: 10px 20px;
     margin-right: 35px;
     margin-left: 35px;
 }
@@ -5948,9 +5948,7 @@ a{
 }
 .col-md-3.list-a{
 	background: url(../../../wp-admin/images/anhsoc.png);
-    padding-bottom: 25px;
-    padding-left: 10px;
-    padding-top: 10px;
+
 }
 /* Kiểu danh sách danh mục */
 ul.category-list {
@@ -6127,6 +6125,9 @@ font-size: 48px;
 .list-top-views h3:hover a{ 
 	color:  #087cce;
 	text-decoration: none;
+}
+.border-row-top-views {
+    padding-left: 10px;
 }
 /*Archives*/
 .row.title{

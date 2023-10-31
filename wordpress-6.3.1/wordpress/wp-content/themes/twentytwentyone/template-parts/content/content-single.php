@@ -30,6 +30,42 @@
         list-style: none;
         display: flex;
     } */
+    .headlinestitle1 a {
+        text-decoration: none;
+        margin-top: 20px;
+        color: black;
+    }
+
+    /* li {
+        list-style: none;
+        display: flex;
+    } */
+
+    .headlinesday1 {
+        border-bottom: black solid 1px;
+        text-align: center;
+    }
+
+    .headlinesdate1 {
+        display: flex;
+        font-family: 'Times New Roman', Times, serif;
+        color: black;
+        padding-left: 5px;
+    }
+
+    .headlinesyear1 {
+        padding-top: 8px;
+        padding-right: 25px;
+    }
+
+    .headlinestitle1 {
+        display: inline;
+        margin-top: 7px;
+    }
+
+    .headlinesdm1 {
+        padding-right: 5px;
+    }
 
     .headlinesday {
         border-bottom: white solid 1px;
@@ -105,7 +141,15 @@
         position: relative;
         margin-bottom: -1px;
     }
+    .detail .title .headlinesdate {
+        background: #f5ce31;
+        border-radius: 50%;
+        padding: 10px 17px;
+    }
 
+    .col-md-2 {
+        width: 16.66666667%;
+    }
     .media-heading:before {
         content: "";
         width: 12px;
@@ -159,7 +203,71 @@
 				</ul>
 			</div>
 		</div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <style>
+    .detail .title .headlinesdate0{
+        background: #f5ce31;
+        border-radius: 50%;
+        padding: 10px 17px;
+    }
+
+    .col-md-2 {
+        width: 16.66666667%;
+    }
+    </style>
+        <div class="col-md-8 container-fluid">
+            <div class="row title ">
+                <div class="col-md-10 col-xs-9 ">
+                    <h1><?php the_title(); ?></h1>
+                </div>
+                <div class="col-md-2 col-xs-3" style="
+    background: #f5ce31;
+    border-radius: 50%;
+   
+	padding-left: 26px;
+">
+                    <div class="headlinesdate0" style="
+    display: flex;">
+
+                        <div class="headlinesdm0" style="float: left;
+    font-family: 'Prata', serif;">
+                            <div class="headlinesday0" style="     border-bottom: 1px solid #000;"><?php
+    $post_date = get_the_date('d');
+    echo $post_date;
+?></div>
+                            <div class="headlinesmonth0"><?php
+    $post_date = get_the_date('m');
+    echo $post_date;
+?></div>
+                        </div>
+                        <div class="headlinesyear0" style="line-height: 3.5em;
+    float: left;
+    margin-left: 3px;"><?php
+    $post_date = get_the_date('Y');
+    echo $post_date;
+?></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row maincontent">
+                <div class="col-md-12">
+                    <p>
+                    <?php the_content(); ?>
+                    </p>
+                    <div style="text-align: right;">&ZeroWidthSpace;<?php the_author(); ?></div>
+                    <p></p>
+                    
+                </div>
+            </div>
+
+            <?php if ( ! is_singular( 'attachment' ) ) : ?>
+            <?php get_template_part( 'template-parts/post/author-bio' ); ?>
+            <?php endif; ?>
+</article><!-- #post-<?php the_ID(); ?> -->
+
+        </div>
         <!-- Revent Post (10) -->
         <div class="col-md-3 bg-color">
             <div class="headlines">
@@ -227,8 +335,8 @@
             </div>
         </div>
 	</div>
-			        <!-- (14) -->
-                    <div class="row container-fluid">
+    <!-- (14) -->
+    <div class="row container-fluid">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <?php
@@ -286,6 +394,92 @@
                   
             </div>
 		
+    <div class="container" >
+            <div class="headlines1">
+
+                <ul style="margin-bottom: 0px; list-style: none">
+                    <?php
+                    $args = array(
+                    'post_type' => 'post', 
+                    'posts_per_page' => -1, 
+                    );
+
+                    $posts = get_posts($args);
+
+                    foreach ($posts as $post) {
+                        setup_postdata($post);
+                    ?>
+                    <li style="display: flex">
+                        <div class="headlinesdate1">
+                            <div class="headlinesdm1">
+                                <div class="headlinesday1">
+                                    <?php
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('d', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+    
+                                    echo $post_date;
+                                    ?>
+                                </div>
+                                <div class="headlinesmonth1">
+                                    <?php
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('m', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+                                    echo $post_date;
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="headlinesyear1">
+                                <?php
+                                    $post_id = get_the_ID(); // Lấy ID của bài viết hiện tại
+                                    $post_date = get_the_date('Y', $post_id); // Lấy ngày đăng bài viết và định dạng ngày tháng (VD: 28/10/2023)
+                                    echo $post_date;
+                                ?>
+                            </div>
+                        </div>
+                        <div class="headlinestitle1">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </div>
+                    </li>
+                    <?php
+                }
+
+                    wp_reset_postdata();
+                    ?>
+                </ul>
+            </div>
+            </div>
+            
+    <!-- (8) -->
+    <div class="container">
+    <section class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist" >
+                            <li class="nav-item"  style="list-style-type: none;
+        display: flex;">
+                                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Make
+                                    a Post</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                                <div class="form-group">
+                                    <label class="sr-only" for="message">post</label>
+                                    <textarea class="form-control" id="message" rows="3" placeholder="What are you thinking..."></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="text-right">
+                        	<button type="submit" class="btn btn-primary">share</button>
+                        </div>
+                    </div>
+                </section>
+    </div>
+			        
 	<div class="entry-content ">
 		<?php
 		the_content();
@@ -300,11 +494,11 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
+        
 	<footer class="entry-footer default-max-width">
 		<?php twenty_twenty_one_entry_meta_footer(); ?>
 	</footer><!-- .entry-footer -->
-
+        
 	<?php if ( ! is_singular( 'attachment' ) ) : ?>
 		<?php get_template_part( 'template-parts/post/author-bio' ); ?>
 	<?php endif; ?>
