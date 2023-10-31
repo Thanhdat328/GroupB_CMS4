@@ -225,7 +225,7 @@
         </div>
 
         <!-- (14) -->
-        <div class="row">
+        <div class="row container-fluid">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <?php
@@ -276,13 +276,13 @@
         <?php  $previous_author = $comment_author; 
     }
 ?>
-<?php
-                    if (comments_open() && !have_comments()) {
-                        comment_form();
-                    }
-                ?>
+    <?php
+            if (comments_open() && !have_comments()) {
+                comment_form();
+            }
+        ?>
+                  
             </div>
-            
             
                 
                 
