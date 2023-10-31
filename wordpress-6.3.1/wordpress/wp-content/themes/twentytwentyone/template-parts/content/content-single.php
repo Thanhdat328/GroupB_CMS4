@@ -226,9 +226,66 @@
                 ?>">Xem tất cả tin tức</a>
             </div>
         </div>
-
 	</div>
-					
+			        <!-- (14) -->
+                    <div class="row container-fluid">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <?php
+                    $comments = get_comments(); // Lấy danh sách các comment
+                    $previous_author = ''; // Biến lưu trữ người comment trước đó
+
+                    foreach ($comments as $comment) {
+                        $comment_author = $comment->comment_author;
+                    
+                    $comment_id = get_comment_ID(); // Lấy ID của comment hiện tại
+                    $avatar_html = get_avatar($comment_id, 80);  
+                ?>
+
+                <div class='container'>
+                    <div class="media comment-box">
+                        <div class="media-left">
+                            <a href="<?php
+                                        $comment_author_url = get_comment_author_url();
+
+                                        if (!empty($comment_author_url)) {
+                                            // echo '<a href="' . esc_url($comment_author_url) . '">' . get_comment_author() . '</a>';
+                                        } else {
+                                            echo get_comment_author();
+                                        }
+                                    ?>">
+                            <?php echo $avatar_html; ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <?php    if ($comment_author !== $previous_author) {?>
+            
+                    <div class="media comment-box">
+                        <div class="media-body">
+                            <h4 class="media-heading"><?php echo $comment_author; ?></h4>
+                                <p>
+                                    <?php echo $comment->comment_content ;?>
+                                </p>
+                        </div>
+                    </div>
+
+        <?php   
+     }
+?>
+                        
+        <?php  $previous_author = $comment_author; 
+    }
+?>
+    <?php
+            if (comments_open() && !have_comments()) {
+                comment_form();
+            }
+        ?>
+                  
+            </div>
+		
 	<div class="entry-content ">
 		<?php
 		the_content();
