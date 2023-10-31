@@ -68,6 +68,7 @@ if ( have_posts() ) {
         <title>Document</title>
     </head>
     <style>
+    
 
         .Search2{
             color: red;
@@ -75,7 +76,7 @@ if ( have_posts() ) {
         }
 
         h4{
-            text-align: center;
+            
             margin-bottom: 1px;
             
         }
@@ -84,6 +85,39 @@ if ( have_posts() ) {
             margin-top: 1px;
             
         }
+        ul.timeline {
+        list-style-type: none;
+        position: relative;
+    }
+
+    ul.timeline:before {
+        content: ' ';
+        background: #d4d9df;
+        display: inline-block;
+        position: absolute;
+        left: 29px;
+        width: 2px;
+        height: 100%;
+        z-index: 400;
+    }
+
+    ul.timeline>li {
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+
+    ul.timeline>li:before {
+        content: ' ';
+        background: white;
+        display: inline-block;
+        position: absolute;
+        border-radius: 50%;
+        border: 3px solid #22c0e8;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        z-index: 400;
+    }
     </style>
     <body>
         
@@ -151,6 +185,38 @@ if ( have_posts() ) {
 <?php endif; ?></div>
 	<div class="col-md-3"></div>
 </div>
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h4>Latest News</h4>
+            <ul class="timeline">
+                <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                <li>
+                    <a target="_blank" href="https://www.totoprayogo.com/#">
+                        <?php the_title(); ?>
+                    </a>
+                    <a href="#" class="float-right">
+                        <?php
+                        $date = date('F d, Y'); // Lấy ngày tháng năm hiện tại
+                        echo $date; // Hiển thị ngày tháng năm?></a>
+                    <p class=''>
+                        <?php
+                        $excerpt = get_the_excerpt(); // Lấy phần tóm tắt
+
+                        $limited_excerpt = wp_trim_words($excerpt, 30, ''); // Giới hạn 20 từ
+
+                        echo $limited_excerpt; // Hiển thị phần tóm tắt đã giới hạn?>....
+                    </p>
+                </li>
+                <?php endwhile;?>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
 	<?php
 	// Start the Loop.
 	while ( have_posts() ) {
