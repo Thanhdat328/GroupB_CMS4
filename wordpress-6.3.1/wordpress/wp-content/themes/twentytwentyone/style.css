@@ -6129,3 +6129,6 @@ font-size: 48px;
 	text-decoration: none;
 }
 /*Archives*/
+.row.title{
+	box-shadow: 0.3px 0.3px;
+}
