@@ -13,17 +13,7 @@ get_header();
 
 if ( have_posts() ) {
 	?>
-	<header class="page-header alignwide">
-		<h1 class="page-title">
-			<?php
-			printf(
-				/* translators: %s: Search term. */
-				esc_html__( 'Results for "%s"', 'twentytwentyone' ),
-				'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
-			);
-			?>
-		</h1>
-	</header><!-- .page-header -->
+	
 	<style>
     #border{
         border-right:1px solid black;
@@ -52,43 +42,7 @@ if ( have_posts() ) {
 </style>
 
 	
-<div class="row">
-	<div class="col-md-3"></div>
-	<div class="col-md-6"><?php ?><?php if (have_posts()) : ?>
 
-<?php while (have_posts()) : the_post(); ?>
-<div class="container" style="
-    border: 1px solid #efecec;
-    margin: 10px;">
-<div class="row">
-	<div class="col-md-3"><?php echo get_the_post_thumbnail();?></div>
-   <div class="col-3 text-center"  id="border"><span style="font-family: 'Prata', serif;font-size: 3.1em;line-height: 1em;"><?php echo get_the_date('d'); // lấy ngày post bài ?></span> <br>Tháng <?php echo get_the_date('m'); // lấy ngày post bài ?></div>
-        
-<div class="col-6" style="
-    max-width: 50%;
-"><h4 style="
-    margin-top: 35px;"><a class="tieuDe" href=<?php the_permalink(); ?>><?php the_title();?></a></h4>
-<p id="noiDung"><?php the_excerpt(); ?><a href=<?php the_permalink(); ?>>[...]</a></p>
-</div>
-    </div>
-</div>
-
-<?php endwhile;?>
-<?php endif; ?></div>
-	<div class="col-md-3"></div>
-</div>
-	</div><!-- .search-result-count -->
-	  <header class="page-header alignwide">
-	  	<h1 class="page-title">
-	 		<?php
-			printf(
-	 			/* translators: %s: Search term. */
-	 			esc_html__( 'Results for "%s"', 'twentytwentyone' ),
-				'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
-	 		);
-	 		?>
-	 	</h1>
-	  </header><!-- .page-header -->
 
 	  <div class="search-result-count default-max-width">
 	 	<?php
@@ -171,6 +125,31 @@ if ( have_posts() ) {
                             </form>
                         </div>
                     </div>
+</div>
+<div class="row">
+	<div class="col-md-3"></div>
+	<div class="col-md-6"><?php ?><?php if (have_posts()) : ?>
+
+<?php while (have_posts()) : the_post(); ?>
+<div class="container" style="
+    border: 1px solid #efecec;
+    margin: 10px;">
+<div class="row">
+	<div class="col-md-3"><?php echo get_the_post_thumbnail();?></div>
+   <div class="col-3 text-center"  id="border"><span style="font-family: 'Prata', serif;font-size: 3.1em;line-height: 1em;"><?php echo get_the_date('d'); // lấy ngày post bài ?></span> <br>Tháng <?php echo get_the_date('m'); // lấy ngày post bài ?></div>
+        
+<div class="col-6" style="
+    max-width: 50%;
+"><h4 style="
+    margin-top: 35px;"><a class="tieuDe" href=<?php the_permalink(); ?>><?php the_title();?></a></h4>
+<p id="noiDung"><?php the_excerpt(); ?><a href=<?php the_permalink(); ?>>[...]</a></p>
+</div>
+    </div>
+</div>
+
+<?php endwhile;?>
+<?php endif; ?></div>
+	<div class="col-md-3"></div>
 </div>
 	<?php
 	// Start the Loop.
