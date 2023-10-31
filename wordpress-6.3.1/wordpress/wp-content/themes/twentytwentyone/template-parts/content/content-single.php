@@ -18,7 +18,40 @@
 		<?php twenty_twenty_one_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="row title">
+		<div class="col-md-3 list-a">
+			<div class="panel-heading"><h2>Categories</h2></div>
+			<div class="crossedbg"></div>
+			<div class="panel-body">
+				<ul class="list-group">
+				<?php
+    				$args = array(
+						'orderby'    => 'name',
+						'order'      => 'ASC',
+						'hide_empty' => false
+					);
+				
+					$categories = get_categories($args); // Lấy danh sách các danh mục dựa trên các tham số trong $args
+				
+					if ($categories) {
+						echo '<ul>';
+				
+						foreach ($categories as $category) {
+							echo '<li class="list-p"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></li>';
+				
+						}
+				
+						echo '</ul>';
+					} else {
+						echo 'Không có danh mục nào.';
+					}
+					?>
+				</ul>
+			</div>
+		</div>
+	</div>
+					
+	<div class="entry-content ">
 		<?php
 		the_content();
 

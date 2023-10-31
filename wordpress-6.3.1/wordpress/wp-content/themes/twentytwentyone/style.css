@@ -97,6 +97,10 @@ Twenty Twenty-One is distributed under the terms of the GNU GPL.
 /* Categories 01 to 03 are the basics. */
 
 /* Variables */
+
+
+
+
 :root {
 
 	/* Font Family */
@@ -2642,17 +2646,17 @@ ul {
 	list-style-type: disc;
 }
 
-ul ul {
+/* ul ul {
 	list-style-type: circle;
-}
+} */
 
 ol {
 	list-style-type: decimal;
 }
 
-ol ul {
+/* ol ul {
 	list-style-type: circle;
-}
+} */
 
 dt {
 	font-family: var(--definition-term--font-family);
@@ -5888,133 +5892,110 @@ footer {
 .is-IE .post-thumbnail .wp-post-image {
 	min-width: auto;
 }
-.title-top-views {
-	display: block;
-    position: relative;
-    line-height: 1.6;
-    margin-bottom: 14px;
-    color: #222;
-    font-weight: bold;
-}
-.title-top-views .title-top-views-in{
-	border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 0;
-	margin-top: -17px;
-    color: #757575;
-}
-.inner-title{
-	position: relative;
-	display: inline-block;
-}
-.inner-title::before{
-	content: "";
-    width: 100%;
-    height: 1px;
-    background: #9f224e;
-    position: absolute;
-    left: 0;
-    bottom: 0;
 
+/*Category*/
+.list-group-item{
+	border: none;
+	border-bottom: 1px #686565 solid;
+	padding-left: 0;
+	padding-right: 0;
+	margin: 0 15px;
 }
-.title-top-views .title-top-views-in .wp-block-group .wp-block-heading{
-	color: #222 !important;
-	margin-bottom: 1px;
-	font-size: 18px;
+.list-group-item:before{
+	font-family: Arial, Helvetica, sans-serif;
+	color:  #d0bc37;
+	font-size: 2em;
+	padding-right: 0.5em;
+	position: relative;
+	top: 0.15em;
 }
-.title-top-views .title-top-views-in a{
+a{
+	color: #092f43;
 	text-decoration: none;
 }
-.border-row-top-views .title-post-top-views .list-top-views{
-	position: relative;
-    padding-left: 45px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-    width: 50%;
-}
-.border-row-top-views .title-post-top-views {
-	position: relative;
-    flex-wrap: wrap;
-}
-.border-row-top-views .title-post-top-views::before {
-	content: "";
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    background: #e5e5e5;
+.crossedbg {
+    background: url(../../../wp-admin/images/anhgach.png);
+    height: 15px;
+    /* margin-block: auto; */
+    margin-right: 35px;
+    margin-left: 35px;
 }
 
-.title-post-top-views{
-	display: flex;
-	flex-wrap: wrap;
+.panel-body{
+	background: #f9f3f3;
+    margin-left: 35px;
+    margin-right: 35px;
 }
-.title-post-top-views .list-top-views{
-	
-    line-height: 160%;
-    margin-bottom: 4px;
+
+.panel-heading{
+	border: none !important;
+	background:none !important;
 }
-.list-top-views{
-	width: 100%;
-    float: left;
+
+.panel-heading h2{
+	font-weight: 800;
+	font-size: 2.0em;
+	margin-left: 35px;
+}
+.list-group-item:last-child{
+	border-bottom: 0px;
+}
+.list-group-item a{
+	color: #092f43;
+}
+.list-group{
+	background: #fff;
+}
+.col-md-3.list-a{
+	background: url(../../../wp-admin/images/anhsoc.png);
+    padding-bottom: 25px;
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-left: 55px;
+}
+/* Kiểu danh sách danh mục */
+ul.category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.category-list li {
+    margin-bottom: 10px;
+}
+
+ul.category-list li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hiệu ứng khi rê chuột vào danh mục */
+ul.category-list li a:hover {
+    color: #ff0000;
+}
+
+/* Chỉnh kiểu danh sách dạng ngang */
+ul.category-list-horizontal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+ul.category-list-horizontal li {
+    margin-right: 10px;
+}
+
+ul.category-list-horizontal li:last-child {
+    margin-right: 0;
+}
+ul{
+	list-style-type: disc;
+	color: #ffde00;
+}
+.list-p{
+	margin-top: 50px;
+    border-bottom: 1px solid #d0d0d0;
+    margin-right: 20px;
     padding-bottom: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #e5e5e5;
-	box-sizing: border-box;
-}
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(1){
-	order: 1;
-} 
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(2){
-	order: 3;
-} 
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(3){
-	order: 5;
-} 
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(4){
-	order: 7;
-} 
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(5){
-	order: 2;
-} 
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(6){
-	order: 4;
-} 
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(7){
-	order: 6;
-} 
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(8){
-	order: 8;
-}
-.title-post-top-views .list-top-views:nth-child(5) .number-top-views, .title-post-top-views .list-top-views:nth-child(6) .number-top-views,
-.title-post-top-views .list-top-views:nth-child(7) .number-top-views, .title-post-top-views .list-top-views:nth-child(8) .number-top-views{
-	left: 20px;
-}
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(5) ,.border-row-top-views .title-post-top-views .list-top-views:nth-child(6) ,
-.border-row-top-views .title-post-top-views .list-top-views:nth-child(7) ,.border-row-top-views .title-post-top-views .list-top-views:nth-child(8) {
-	padding-left: 65px;
-}
-.list-top-views:nth-child(4),.list-top-views:nth-child(8){
-	border-bottom: none;
-}
-.title-post-top-views .list-top-views .number-top-views{
-	font-family: "Merriweather",serif !important;
-font-size: 48px;
-    color: #222;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    -webkit-font-feature-settings: "pnum" on,"lnum" on;
-    font-feature-settings: "pnum" on,"lnum" on;
-}
-.list-top-views h3.list-title-top-views a{ 
-	color: #222222;
-	text-decoration: none;
-    font-size: 14px !important;
-}
-.list-top-views h3:hover a{ 
-	color:  #087cce;
-	text-decoration: none;
 }
