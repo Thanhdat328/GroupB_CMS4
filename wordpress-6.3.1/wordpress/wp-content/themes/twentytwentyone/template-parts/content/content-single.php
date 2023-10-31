@@ -409,7 +409,7 @@
                     foreach ($posts as $post) {
                         setup_postdata($post);
                     ?>
-                    <li style="display: flex">
+                    <li style="padding-left: 200px; display: flex">
                         <div class="headlinesdate1">
                             <div class="headlinesdm1">
                                 <div class="headlinesday1">
@@ -480,24 +480,22 @@
                 </section>
     </div>
 			        
-	<div class="entry-content ">
+	<!-- <div class="entry-content ">
 		<?php
-		the_content();
+		// the_content();
 
-		wp_link_pages(
-			array(
-				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
-				'after'    => '</nav>',
-				/* translators: %: Page number. */
-				'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
-			)
-		);
+		// wp_link_pages(
+		// 	array(
+		// 		'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
+		// 		'after'    => '</nav>',
+		// 		/* translators: %: Page number. */
+		// 		'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+		// 	)
+		// );
 		?>
-	</div><!-- .entry-content -->
+	</div> -->
         
-	<footer class="entry-footer default-max-width">
-		<?php twenty_twenty_one_entry_meta_footer(); ?>
-	</footer><!-- .entry-footer -->
+
         
 	<?php if ( ! is_singular( 'attachment' ) ) : ?>
 		<?php get_template_part( 'template-parts/post/author-bio' ); ?>

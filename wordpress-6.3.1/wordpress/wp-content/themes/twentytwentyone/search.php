@@ -208,7 +208,7 @@ if ( have_posts() ) {
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h4>Latest News</h4>
+            <h4 style="text-align: left">Latest News</h4>
             <ul class="timeline">
                 <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
@@ -220,7 +220,7 @@ if ( have_posts() ) {
                         <?php
                         $date = date('F d, Y'); // Lấy ngày tháng năm hiện tại
                         echo $date; // Hiển thị ngày tháng năm?></a>
-                    <p class=''>
+                    <p style="color: #000">
                         <?php
                         $excerpt = get_the_excerpt(); // Lấy phần tóm tắt
 
