@@ -159,14 +159,36 @@ if ( have_posts() ) {
                     </div>
 </div>
 <div class="row">
-	<div class="col-md-3"></div>
+	<div class="col-md-3" style="
+    margin-left: 10px;">
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+        <h4 style="text-align: left">
+                                <?php the_title(); ?>
+                            </h4>
+                            <hr>
+                            <p><img class="img-responsive">
+                                <?php the_post_thumbnail(); ?>
+                            </p>
+                            <p>
+                                <?php
+                                        $excerpt = get_the_excerpt(); // Lấy phần tóm tắt của bài viết
+                                        $trimmed_excerpt = wp_trim_words( $excerpt, 20, '...' ); // Giới hạn 20 từ và thêm dấu "..." vào cuối
+
+                                        echo $trimmed_excerpt; // Hiển thị phần tóm tắt đã được giới hạn
+                                    ?>
+                            </p>
+        <?php endwhile;?>
+        <?php endif; ?>
+
+    </div>
 	<div class="col-md-6"><?php ?><?php if (have_posts()) : ?>
 
 <?php while (have_posts()) : the_post(); ?>
 <div class="container" style="
     border: 1px solid #efecec;
     margin: 10px;">
-<div class="row">
+<div class="row title">
 	<div class="col-md-3"><?php echo get_the_post_thumbnail();?></div>
    <div class="col-3 text-center"  id="border"><span style="font-family: 'Prata', serif;font-size: 3.1em;line-height: 1em;"><?php echo get_the_date('d'); // lấy ngày post bài ?></span> <br>Tháng <?php echo get_the_date('m'); // lấy ngày post bài ?></div>
         
@@ -181,7 +203,7 @@ if ( have_posts() ) {
 
 <?php endwhile;?>
 <?php endif; ?></div>
-	<div class="col-md-3"></div>
+	<div class="col-md-3" ></div>
 </div>
 <div class="container mt-5 mb-5">
     <div class="row">
