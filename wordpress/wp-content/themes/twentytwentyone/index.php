@@ -38,6 +38,7 @@ get_header();
 						'orderby'     => 'date', 
 						'order'       => 'DESC'
 					);
+                    
 					$recent_posts = get_posts($args);
 					$count = 1;
 					foreach ($recent_posts as $post) {
