@@ -5891,6 +5891,7 @@ footer {
 
 .is-IE .post-thumbnail .wp-post-image {
 	min-width: auto;
+<<<<<<< HEAD
 }
 
 /*Category*/
@@ -6130,3 +6131,7 @@ font-size: 48px;
 	text-decoration: none;
 }
 /*Archives*/
+=======
+	
+}
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)

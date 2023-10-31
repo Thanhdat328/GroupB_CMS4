@@ -26,10 +26,17 @@
     #search{
       border-radius: 5px; 
       outline: none;
+<<<<<<< HEAD
       border: 1px solid #ccc;
     margin: 18px 0px;
     }
   
+=======
+    }
+    #search:focus{      
+      border: none !importantto;
+    }
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)
     #submit{
       background:#fff;
       color:#333339;
@@ -38,6 +45,7 @@
   margin-left: 5px;
   outline: none;
   font-family: Arial, Helvetica, sans-serif;
+<<<<<<< HEAD
   margin: 15px 10px;
     height: 49px;
     margin-top: 18px;
@@ -45,6 +53,8 @@
     text-align: center;
     padding-top: 13px;
 
+=======
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)
 
     }
     #submit:hover{
@@ -62,11 +72,14 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<<<<<<< HEAD
 <?php 
 $twentytwentyone_unique_id = wp_unique_id( 'search-form-' );
 
 $twentytwentyone_aria_label = ! empty( $args['aria_label'] ) ? 'aria-label="' . esc_attr( $args['aria_label'] ) . '"' : '';
 ?>
+=======
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid border">            
           <a class="navbar-brand text-secondary" href="#">Group B</a>
@@ -74,6 +87,7 @@ $twentytwentyone_aria_label = ! empty( $args['aria_label'] ) ? 'aria-label="' . 
             <span class="navbar-toggler-icon"></span>
           </button>      
           <a class="nav-link active mr-15" id ="home" aria-current="page" href="#"  style="margin-right: 15px">Home</a>
+<<<<<<< HEAD
           <form role="search" <?php echo $twentytwentyone_aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?> method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	
 	<input id="search" placeholder="Search" type="search" id="<?php echo esc_attr( $twentytwentyone_unique_id ); ?>" class="search-field" value="<?php echo get_search_query(); ?>" name="s" />
@@ -89,11 +103,30 @@ $twentytwentyone_aria_label = ! empty( $args['aria_label'] ) ? 'aria-label="' . 
                   <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Khoa học</a>
                 </li>
                 <li class="nav-item" style="margin-right: 20px;">
+=======
+          <form class="d-flex" action="<?php the_permalink(); ?>" method="get">
+            <input id="search" class="rounded form-control me-2 border border-secondary-subtle" type="search" placeholder="Search" aria-label="Search">
+            <button type="button" class="rounded" id="submit">Submit</button>
+          </form>    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end w-100 align-items-center">             
+                <li class="nav-item">
+                  <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Thể thao</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Khoa học</a>
+                </li>
+                <li class="nav-item">
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)
                   <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Tin tức</a>
                 </li>
                 <li class="nav-item" style="margin-top: 10px;">
                 <div class="text-center">
+<<<<<<< HEAD
                 <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="padding-bottom: 2px;margin-right: 20px;" >
+=======
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)
                   <i class="fa-solid fa-ellipsis" style="color: #080808;"></i>
                   <p style="font-size: 10px;">Menu</p>
                 </a>
@@ -101,7 +134,11 @@ $twentytwentyone_aria_label = ! empty( $args['aria_label'] ) ? 'aria-label="' . 
                 </li>
                 <li class="nav-item" style="margin-top: 10px;">
                 <div class="text-center">
+<<<<<<< HEAD
                 <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="margin-bottom: -8px; ">
+=======
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)
                   <i class="fa-solid fa-magnifying-glass" style="color: #0a0a0a;"></i>
                   <p style="font-size: 10px;">Search</p>
                 </a>

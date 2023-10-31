@@ -16,6 +16,7 @@
 
 get_header(); ?>
 <style>
+<<<<<<< HEAD
     
 </style>
 
@@ -66,5 +67,81 @@ get_header(); ?>
 </div>
 
 <?php
+=======
+    #border {
+        border-right: 1px solid black;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-width: 2px;
+        margin-top: 35px;
+    }
+
+ 
+
+    #noiDung {
+        text-transform: uppercase;
+        font-size: 0.9em;
+        color: #7b6d82;
+
+    }
+
+   
+    .vien {
+        border: solid 1px #dee2e6;
+        margin-bottom: 20px;
+    }
+</style>
+<?php 
+$post_date = $post->post_date;				
+$post_date_day = date('d',strtotime($post_date));				
+$post_date_month = date('m',strtotime($post_date));				
+?>
+
+
+<?php if (have_posts()) : ?>
+
+<?php while (have_posts()) : the_post(); ?>
+
+<div class="container vien">
+    <div class="row">
+        <div class="col-3 text-center" id="border"><span
+                style="font-family: 'Prata', serif;font-size: 3.1em;line-height: 1em;">
+                <?php echo get_the_date('d'); // lấy ngày post bài ?>
+            </span> <br>Tháng
+            <?php echo get_the_date('m'); // lấy tháng post bài ?>
+        </div>
+
+
+        <div class="col-9" style="max-width: 50%;">
+            <h4 style="margin-top: 35px;"><a class="tieuDe" href=<?php the_permalink(); ?>>
+                    <?php the_title();?>
+                </a></h4>
+
+            <p id="noiDung">
+            <?php
+$excerpt = get_the_excerpt(); // Lấy phần tóm tắt
+
+$limited_excerpt = wp_trim_words($excerpt, 30, ''); // Giới hạn 20 từ
+
+$lowercase_excerpt = strtolower($limited_excerpt); // Chuyển thành chữ thường
+
+echo $lowercase_excerpt; // Hiển thị phần tóm tắt đã giới hạn và chữ thường
+?><a href=<?php the_permalink(); ?>>[...]</a>
+            </p>
+        </div>
+    </div>
+
+
+</div>
+<?php endwhile;?>
+<?php endif; ?>
+
+
+
+
+
+<?php
+
+>>>>>>> Truong_Thi_Thuy_Hoa_Module(2)
 get_footer();
 ?>
