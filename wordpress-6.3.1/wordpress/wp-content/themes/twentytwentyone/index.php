@@ -27,70 +27,44 @@ get_header(); ?>
 </header><!-- .page-header -->
 <?php endif; ?>
 
-<?php
-if ( have_posts() ) {
+<div class="row">
+ <div class="col-md-3 list-top-views">
+			<div class="border-row-top-views"> 
+				<div class="title-top-views">
+					<h2 class="title-top-views-in">
+						<a class="inner-title"href=""><?php echo get_option('widget_block')[5]['content']; ?></a>
+					</h2>
+				</div>
+				<div class="title-post-top-views">
+					<?php
+					$args = array(
+						'numberposts' => 8, 
+						'post_status' => 'publish', 
+						'orderby'     => 'date', 
+						'order'       => 'DESC'
+					);
 
-	// Load posts loop.
-	while ( have_posts() ) {
-		the_post();
-
-		get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
-	}
-
-	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
-
-} else {
-
-	// If no content, include the "No posts found" template.
-	get_template_part( 'template-parts/content/content-none' );
-
-}
-?>
-
-
-
-
-
-<!-- <div class="container">
-<div class="col-md-8">
-    
-    <div class="list_news">
-        <div class="list_new_view">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="top_news_block_thumb">
-                        <img src="<?php the_post_thumbnail(); ?>">
-                    </div>
-                </div>
-                <div class="col-md-7 top_news_block_desc">
-                    <div class="row">
-                        <div class="col-md-3 col-xs-3 topnewstime">
-                            <span class="topnewsdate"><?php the_date(); ?></span><br>
-                            <span class="topnewsmonth"><?php the_date(); ?></span><br>
-                        </div>
-                        <div class="col-md-9 col-xs-9 shortdesc">
-                            <h4>
-                                <a
-                                    href="http://fit.tdc.edu.vn/tin-tuc/dang-ky-ky-nang-viet-cv-va-ky-nang-tra-loi-phong-van-hieu-qua">
-                                    <?php the_title(); ?>
-                            </h4>
-                            <p><?php the_excerpt(); ?><a
-                                    href="http://fit.tdc.edu.vn/tin-tuc/dang-ky-ky-nang-viet-cv-va-ky-nang-tra-loi-phong-van-hieu-qua">[...]</a>
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-             
-</div>
+					$recent_posts = get_posts($args);
+					$count = 1;
+					foreach ($recent_posts as $post) {
+						setup_postdata($post);
+						?>
+							<div class="list-top-views ">
+								<span class="number-top-views"><?php echo $count; ?></span>
+								<h3 class="list-title-top-views"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							</div>
+							<?php
+							$count++;
+            }
+						wp_reset_postdata();
+						?>
+				</div>
+			</div>
+		</div>
+    <div class="col-md-6"></div>
+    <div class="col-md-3"></div>
 </div>
 
- -->
-
 <?php
-
 get_footer();
 ?>
