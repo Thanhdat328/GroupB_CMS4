@@ -5916,7 +5916,7 @@ a{
 .crossedbg {
     background: url(../../../wp-admin/images/anhgach.png);
     height: 15px;
-    margin-block: 10px 20px;
+    margin-block: auto;
     margin-right: 35px;
     margin-left: 35px;
 }
